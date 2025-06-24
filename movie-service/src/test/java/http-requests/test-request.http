@@ -1,0 +1,12 @@
+
+### Получение всех фильмов
+GET http://localhost:8080/api/movie/all
+
+### Получение фильмов по названию
+GET http://localhost:8080/api/movie/search/title?title=Inception
+
+### Получение фильмов по жанру
+GET http://localhost:8080/api/movie/search/genre?genre=Drama
+
+### Получение фильмов по году выпуску
+GET http://localhost:8080/api/movie/search/year?year=2019

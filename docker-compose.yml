@@ -1,0 +1,30 @@
+services:
+  movie-service:
+    build:
+      context: ./movie-service
+    container_name: movie-service
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_APPLICATION_NAME: movie-service
+      DB_USERNAME: postgres
+      DB_PASSWORD: 16042005
+    networks:
+      - recommend-sys-network
+
+  recommendation-service:
+    build:
+      context: ./recommendation-service
+    container_name: recommendation-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - movie-service
+    environment:
+      MOVIE_SERVICE_URL: http://movie-service:8080
+    networks:
+      - recommend-sys-network
+
+networks:
+  recommend-sys-network:
+    driver: bridge

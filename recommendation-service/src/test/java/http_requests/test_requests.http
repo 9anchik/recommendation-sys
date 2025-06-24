@@ -1,0 +1,7 @@
+### Рекомендация по конкретному id фильма
+GET http://localhost:8081/api/recommendations/22
+
+# TODO реализовать рекомендацию по названию фильма
+
+### Рекомендация на основе популярности фильма
+GET http://localhost:8081/api/recommendations/popular
